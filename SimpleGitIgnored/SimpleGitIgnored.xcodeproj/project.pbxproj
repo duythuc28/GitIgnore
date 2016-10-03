@@ -12,6 +12,7 @@
 		1DFBCF741DA2100A00474AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DFBCF721DA2100A00474AD1 /* Main.storyboard */; };
 		1DFBCF761DA2100B00474AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DFBCF751DA2100B00474AD1 /* Assets.xcassets */; };
 		1DFBCF791DA2100B00474AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DFBCF771DA2100B00474AD1 /* LaunchScreen.storyboard */; };
+		93CF106F1B3490D2104F148F /* Pods_SimpleGitIgnored.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB2D40A0A3A180425D71255 /* Pods_SimpleGitIgnored.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		1DFBCF751DA2100B00474AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DFBCF781DA2100B00474AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DFBCF7A1DA2100B00474AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77BE0F5C575C34FD10D727CD /* Pods-SimpleGitIgnored.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGitIgnored.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleGitIgnored/Pods-SimpleGitIgnored.debug.xcconfig"; sourceTree = "<group>"; };
+		AAB2D40A0A3A180425D71255 /* Pods_SimpleGitIgnored.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleGitIgnored.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2017F477022CAB1FE69997C /* Pods-SimpleGitIgnored.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGitIgnored.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleGitIgnored/Pods-SimpleGitIgnored.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93CF106F1B3490D2104F148F /* Pods_SimpleGitIgnored.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E2EF3FB180564A9A9B5429B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77BE0F5C575C34FD10D727CD /* Pods-SimpleGitIgnored.debug.xcconfig */,
+				D2017F477022CAB1FE69997C /* Pods-SimpleGitIgnored.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1DFBCF621DA2100A00474AD1 = {
 			isa = PBXGroup;
 			children = (
 				1DFBCF6D1DA2100A00474AD1 /* SimpleGitIgnored */,
 				1DFBCF6C1DA2100A00474AD1 /* Products */,
+				0E2EF3FB180564A9A9B5429B /* Pods */,
+				C93C2DB10465E0ADAD790BBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = SimpleGitIgnored;
 			sourceTree = "<group>";
 		};
+		C93C2DB10465E0ADAD790BBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAB2D40A0A3A180425D71255 /* Pods_SimpleGitIgnored.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DFBCF7D1DA2100B00474AD1 /* Build configuration list for PBXNativeTarget "SimpleGitIgnored" */;
 			buildPhases = (
+				1182F708A6DB03B46C846922 /* [CP] Check Pods Manifest.lock */,
 				1DFBCF671DA2100A00474AD1 /* Sources */,
 				1DFBCF681DA2100A00474AD1 /* Frameworks */,
 				1DFBCF691DA2100A00474AD1 /* Resources */,
+				4B940B6A5F09850ABB92655A /* [CP] Embed Pods Frameworks */,
+				A6C2E6056E479A3F8401EB3D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1182F708A6DB03B46C846922 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4B940B6A5F09850ABB92655A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleGitIgnored/Pods-SimpleGitIgnored-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6C2E6056E479A3F8401EB3D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleGitIgnored/Pods-SimpleGitIgnored-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1DFBCF671DA2100A00474AD1 /* Sources */ = {
@@ -258,6 +333,7 @@
 		};
 		1DFBCF7E1DA2100B00474AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77BE0F5C575C34FD10D727CD /* Pods-SimpleGitIgnored.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleGitIgnored/Info.plist;
@@ -270,6 +346,7 @@
 		};
 		1DFBCF7F1DA2100B00474AD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2017F477022CAB1FE69997C /* Pods-SimpleGitIgnored.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleGitIgnored/Info.plist;
@@ -299,6 +376,7 @@
 				1DFBCF7F1DA2100B00474AD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
